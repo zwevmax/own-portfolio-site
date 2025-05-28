@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projects - KT Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-in.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <a href="index.html" class="nav-logo">KT</a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="skills.html" class="nav-link">Skills</a></li>
+        <li><a href="projects.html" class="nav-link active">Projects</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="header-content">
+      <h1>Projects</h1>
+      <p>Selected works showcasing my skills and experience</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="projects-section section-glass">
+      <h3 class="section-title">Highlighted Projects</h3>
+      <div class="projects-grid">
+        <div class="project-card fade-in" tabindex="0">
+          <h4>Simple Banking System in Java</h4>
+          <p>
+            Designed a banking simulation with object-oriented principles. Supported transactions, balance checks, and user roles.
+          </p>
+              </div>
+
+        <div class="project-card fade-in" tabindex="0">
+          <h4>Student Management System in C++</h4>
+          <p>
+            Developed using file handling and class structures to manage student records efficiently.
+          </p>
+                 </div>
+
+        <div class="project-card fade-in" tabindex="0">
+          <h4>Employee Management System (C++ & SQL)</h4>
+          <p>
+            A full-featured system that manages employee data, integrates with SQL for data storage, and uses C++ for logic and user interaction.
+          </p>
+               </div>
+
+        <div class="project-card fade-in" tabindex="0">
+          <h4>Mini Utilities & Simple Apps</h4>
+          <p>
+            A collection of smaller projects including calculators, file managers, and CLI-based tools built for learning and experimentation.
+          </p>
+                 </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+  &copy; 2025 KT. Code is my canvas, creativity my compiler.
+  </footer>
+
+  <script>
+    const fadeEls = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    }, { threshold: 0.15 });
+
+    fadeEls.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

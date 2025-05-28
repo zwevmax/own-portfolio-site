@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>KT - Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Outfit', sans-serif;
+      background: #000;
+      color: #f5f5f5;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    header {
+      position: relative;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding: 3rem 5%;
+      background: rgba(255, 255, 255, 0.02);
+      backdrop-filter: blur(12px);
+      overflow: hidden;
+    }
+
+    #light-trails {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .logo-area, nav {
+      position: relative;
+      z-index: 1;
+    }
+
+    header .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    header img {
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      border: 3px solid #ff69b4;
+      box-shadow: 0 0 15px #ff69b466;
+    }
+
+    nav {
+      margin-top: 1rem;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .nav-links a {
+      color: #ccc;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: #ff69b4;
+    }
+
+    .hero {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+      background: linear-gradient(135deg, #11002d, #1f005c, #0b1623);
+    }
+
+    #connect-canvas {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 2rem;
+    }
+
+    .hero h2 {
+      font-size: 3rem;
+      color: #64ffda;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      max-width: 600px;
+      font-size: 1.25rem;
+      color: #e0dce5;
+    }
+
+    .btn-cta {
+      background: #ff69b4;
+      color: #fff;
+      padding: 0.8rem 2rem;
+      border-radius: 30px;
+      margin-top: 2rem;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1rem;
+      box-shadow: 0 0 12px #ff69b488;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+
+    .btn-cta:hover {
+      background: #64ffda;
+      color: #0a0f2c;
+      box-shadow: 0 0 20px #64ffda88;
+    }
+
+    section.preview {
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    section.preview h3 {
+      font-size: 2rem;
+      color: #ff69b4;
+      margin-bottom: 1rem;
+    }
+
+    section.preview p {
+      max-width: 640px;
+      margin: 0 auto 1.5rem;
+      color: #ddd;
+      font-size: 1.1rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: #aaa;
+      background: rgba(255, 255, 255, 0.02);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .hero h2 {
+        font-size: 2.2rem;
+      }
+
+      section.preview h3 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <canvas id="light-trails"></canvas>
+    <div class="logo-area">
+   <img src="images/logo.jpg" alt="KT logo portrait">
+    </div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="skills.html">Skills</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <canvas id="connect-canvas"></canvas>
+    <div class="hero-content">
+      <h2>Hello, I'm Ketsebaot</h2>
+      <p>Third year CS student exploring code, cyber security, and clean design. Currently learning different skills and building my future in tech one line at a time.</p>
+      <a href="about.html" class="btn-cta">Learn More About Me</a>
+    </div>
+  </section>
+
+  <section class="preview">
+    <h3>Languages I Use</h3>
+    <p>Java, C++, SQL — and just starting with HTML & CSS. I learn fast and love building things that work beautifully.</p>
+    <a href="skills.html" class="btn-cta">View My Skills</a>
+  </section>
+
+  <section class="preview">
+    <h3>Projects That Matter</h3>
+    <p>From banking apps to student managers — each one taught me something new. Every bug fixed, every function written, made me better.</p>
+    <a href="projects.html" class="btn-cta">Explore Projects</a>
+  </section>
+
+  <section class="preview">
+    <h3>Let's Connect</h3>
+    <p>If you're curious about my journey, want to collaborate, or just say hi — I'm one click away.</p>
+    <a href="contact.html" class="btn-cta">Contact Me</a>
+  </section>
+
+  <script>
+    const c = document.getElementById('light-trails');
+    let w = c.width = window.innerWidth;
+    let h = c.height = window.innerHeight;
+    const ctx = c.getContext('2d');
+
+    const opts = {
+      len: 20, count: 50, baseTime: 10, addedTime: 10, dieChance: 0.05,
+      spawnChance: 1, sparkChance: 0.1, sparkDist: 10, sparkSize: 2,
+      color: 'hsl(hue,100%,light%)', baseLight: 50, addedLight: 10,
+      shadowToTimePropMult: 6, baseLightInputMultiplier: 0.01, addedLightInputMultiplier: 0.02,
+      cx: w / 2, cy: h / 2, repaintAlpha: 0.04, hueChange: 0.1
+    };
+
+    let tick = 0, lines = [];
+    let dieX = w / 2 / opts.len, dieY = h / 2 / opts.len;
+    const baseRad = Math.PI * 2 / 6;
+
+    ctx.fillStyle = 'black';
+    ctx.fillRect(0, 0, w, h);
+
+    function loop() {
+      requestAnimationFrame(loop);
+      tick++;
+
+      ctx.globalCompositeOperation = 'source-over';
+      ctx.shadowBlur = 0;
+      ctx.fillStyle = `rgba(0,0,0,${opts.repaintAlpha})`;
+      ctx.fillRect(0, 0, w, h);
+      ctx.globalCompositeOperation = 'lighter';
+
+      if (lines.length < opts.count && Math.random() < opts.spawnChance)
+        lines.push(new Line());
+
+      lines.forEach(line => line.step());
+    }
+
+    function Line() { this.reset(); }
+    Line.prototype.reset = function () {
+      this.x = 0; this.y = 0; this.addedX = 0; this.addedY = 0; this.rad = 0;
+      this.lightInputMultiplier = opts.baseLightInputMultiplier + opts.addedLightInputMultiplier * Math.random();
+      this.color = opts.color.replace('hue', tick * opts.hueChange);
+      this.cumulativeTime = 0;
+      this.beginPhase();
+    };
+    Line.prototype.beginPhase = function () {
+      this.x += this.addedX; this.y += this.addedY;
+      this.time = 0;
+      this.targetTime = (opts.baseTime + opts.addedTime * Math.random()) | 0;
+      this.rad += baseRad * (Math.random() < 0.5 ? 1 : -1);
+      this.addedX = Math.cos(this.rad); this.addedY = Math.sin(this.rad);
+      if (Math.random() < opts.dieChance || this.x > dieX || this.x < -dieX || this.y > dieY || this.y < -dieY)
+        this.reset();
+    };
+    Line.prototype.step = function () {
+      this.time++; this.cumulativeTime++;
+      if (this.time >= this.targetTime) this.beginPhase();
+      const prop = this.time / this.targetTime;
+      const wave = Math.sin(prop * Math.PI / 2);
+      const x = this.addedX * wave, y = this.addedY * wave;
+      ctx.shadowBlur = prop * opts.shadowToTimePropMult;
+      const light = opts.baseLight + opts.addedLight * Math.sin(this.cumulativeTime * this.lightInputMultiplier);
+      ctx.fillStyle = ctx.shadowColor = this.color.replace('light', light);
+      ctx.fillRect(opts.cx + (this.x + x) * opts.len, opts.cy + (this.y + y) * opts.len, 2, 2);
+      if (Math.random() < opts.sparkChance)
+        ctx.fillRect(
+          opts.cx + (this.x + x) * opts.len + Math.random() * opts.sparkDist * (Math.random() < 0.5 ? 1 : -1) - opts.sparkSize / 2,
+          opts.cy + (this.y + y) * opts.len + Math.random() * opts.sparkDist * (Math.random() < 0.5 ? 1 : -1) - opts.sparkSize / 2,
+          opts.sparkSize, opts.sparkSize
+        );
+    };
+
+    loop();
+    window.addEventListener('resize', () => {
+      w = c.width = window.innerWidth;
+      h = c.height = window.innerHeight;
+      ctx.fillStyle = 'black';
+      ctx.fillRect(0, 0, w, h);
+      opts.cx = w / 2; opts.cy = h / 2;
+      dieX = w / 2 / opts.len; dieY = h / 2 / opts.len;
+    });
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script>
+    (function () {
+      const canvas = document.getElementById("connect-canvas");
+      const ctx = canvas.getContext("2d");
+      let width, height, points = [], target = { x: 0, y: 0 }, animate = true;
+
+      function resizeCanvas() {
+        width = window.innerWidth;
+        height = window.innerHeight;
+        canvas.width = width;
+        canvas.height = height;
+      }
+
+      function initPoints() {
+        points = [];
+        const step = width / 20;
+        for (let x = 0; x < width; x += step) {
+          for (let y = 0; y < height; y += step) {
+            let px = x + Math.random() * step;
+            let py = y + Math.random() * step;
+            let point = { x: px, y: py, originX: px, originY: py };
+            points.push(point);
+          }
+        }
+
+        points.forEach(p1 => {
+          let closest = points.filter(p2 => p1 !== p2).sort((a, b) => getDistance(p1, a) - getDistance(p1, b)).slice(0, 5);
+          p1.closest = closest;
+          p1.circle = new Circle(p1, 2 + Math.random() * 2);
+          movePoint(p1);
+        });
+      }
+
+      function movePoint(p) {
+        gsap.to(p, {
+          x: p.originX - 50 + Math.random() * 100,
+          y: p.originY - 50 + Math.random() * 100,
+          duration: 1 + Math.random(),
+          ease: "power1.inOut",
+          onComplete: () => movePoint(p)
+        });
+      }
+
+      function animateCanvas() {
+        if (animate) {
+          ctx.clearRect(0, 0, width, height);
+          points.forEach(p => {
+            let dist = getDistance(target, p);
+            p.active = dist < 4000 ? 0.3 : dist < 20000 ? 0.1 : dist < 40000 ? 0.02 : 0;
+            drawLines(p);
+            p.circle.draw();
+          });
+        }
+        requestAnimationFrame(animateCanvas);
+      }
+
+      function drawLines(p) {
+        if (!p.active) return;
+        p.closest.forEach(other => {
+          ctx.beginPath();
+          ctx.moveTo(p.x, p.y);
+          ctx.lineTo(other.x, other.y);
+          ctx.strokeStyle = `rgba(156,217,249,${p.active})`;
+          ctx.stroke();
+        });
+      }
+
+      function Circle(pos, radius) {
+        this.pos = pos;
+        this.radius = radius;
+        this.active = 0;
+        this.draw = function () {
+          if (!this.active) return;
+          ctx.beginPath();
+          ctx.arc(this.pos.x, this.pos.y, this.radius, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(156,217,249,${this.active})`;
+          ctx.fill();
+        };
+      }
+
+      function getDistance(p1, p2) {
+        return (p1.x - p2.x) ** 2 + (p1.y - p2.y) ** 2;
+      }
+
+      window.addEventListener("resize", () => {
+        resizeCanvas();
+        initPoints();
+      });
+
+      window.addEventListener("mousemove", e => {
+        target.x = e.clientX;
+        target.y = e.clientY;
+      });
+
+      resizeCanvas();
+      initPoints();
+      animateCanvas();
+    })();
+  </script>
+  <footer>
+    &copy; 2025 KT. Curiosity wrote this site. Consistency keeps it running.
+  </footer>
+</body>
+</html>

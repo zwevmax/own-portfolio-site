@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Me</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .contact-form-section {
+      max-width: 650px;
+      margin: auto;
+      padding: 3rem 2rem;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 0 30px rgba(255, 105, 180, 0.15);
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      color: #ff69b4;
+      margin-bottom: 1.5rem;
+      text-shadow: 0 0 10px #ff69b477;
+    }
+
+    .contact-form-section form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .contact-form-section input,
+    .contact-form-section textarea {
+      padding: 0.9rem 1rem;
+      font-size: 1rem;
+      background: rgba(255, 255, 255, 0.07);
+      border: none;
+      color: #f5f5f5;
+      border-radius: 10px;
+      box-shadow: inset 0 0 6px #000;
+    }
+
+    .contact-form-section input:focus,
+    .contact-form-section textarea:focus {
+      outline: 2px solid #ff69b4;
+    }
+
+    .btn-cta {
+      padding: 0.8rem 2rem;
+      border: none;
+      font-weight: bold;
+      font-size: 1rem;
+      border-radius: 30px;
+      background: linear-gradient(90deg, #ff69b4, #c084fc);
+      color: #0b1623;
+      cursor: pointer;
+      box-shadow: 0 0 15px #ff69b4aa;
+      transition: 0.3s ease;
+    }
+
+    .btn-cta:hover {
+      background: linear-gradient(90deg, #c084fc, #ff69b4);
+      color: #fff;
+      box-shadow: 0 0 25px #ff69b4dd;
+    }
+
+    a.email-link {
+      display: block;
+      text-align: center;
+      color: #ff69b4;
+      margin-bottom: 1rem;
+      font-weight: bold;
+      font-size: 1rem;
+      text-decoration: none;
+    }
+
+    a.email-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav class="navbar">
+      <a href="index.html" class="nav-logo">KT</a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="skills.html" class="nav-link">Skills</a></li>
+        <li><a href="projects.html" class="nav-link">Projects</a></li>
+        <li><a href="contact.html" class="nav-link active">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="contact-form-section container section-glass">
+    <h2 class="section-title">Contact Me</h2>
+    <a href="mailto:allaxa1624@gmail.com" class="email-link">📧 allaxa1624@gmail.com</a>
+
+    <form action="https://formsubmit.co/allaxa1624@gmail.com" method="POST">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_subject" value="New message from your portfolio!">
+      <input type="hidden" name="_template" value="box">
+      <input type="hidden" name="_next" value="thankyou.html">
+
+      <label for="name">Name *</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="email">Your Email *</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="message">Message *</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+
+      <label for="password">Create Password (min 8 chars) *</label>
+      <input type="password" id="password" name="password" minlength="8" required />
+
+      <button type="submit" class="btn-cta">Send</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 KT. Always learning, always building 🌸</p>
+  </footer>
+</body>
+</html>
